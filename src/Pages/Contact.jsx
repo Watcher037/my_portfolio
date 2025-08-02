@@ -1,141 +1,50 @@
-import React, { useState } from "react";
+import React from "react";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you can add your form submission logic (e.g., API call)
-    setSubmitted(true);
-  };
-
   return (
-    <section className="contact-section" style={styles.section}>
-      <div style={styles.container}>
-        <h2 style={styles.heading}>Contact Me</h2>
-        <p style={styles.subheading}>
-          Feel free to reach out by filling the form below!
+    <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white px-4 py-20">
+      <div className="text-center animate-fade-in">
+        <h2 className="text-4xl font-bold mb-4">Let's Connect!</h2>
+        <p className="text-lg mb-8">
+          I'd love to hear from you. Reach out through any of the platforms below.
         </p>
-        <form style={styles.form} onSubmit={handleSubmit}>
-          <input
-            style={styles.input}
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={form.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            style={styles.input}
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            style={styles.textarea}
-            name="message"
-            placeholder="Your Message"
-            value={form.message}
-            onChange={handleChange}
-            required
-            rows={5}
-          />
-          <button style={styles.button} type="submit">
-            Send Message
-          </button>
-          {submitted && (
-            <p style={styles.success}>Thank you for contacting me!</p>
-          )}
-        </form>
+
+        <div className="flex justify-center gap-6 mt-4">
+          <a
+            href="https://github.com/Watcher037"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14 flex items-center justify-center rounded-full bg-gray-900 hover:scale-110 transition-transform duration-300 shadow-lg"
+          >
+            <FaGithub size={24} />
+          </a>
+          <a
+            href="https://linkedin.com/in/bibhu-prasad-dash-829654258"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-700 hover:scale-110 transition-transform duration-300 shadow-lg"
+          >
+            <FaLinkedin size={24} />
+          </a>
+          <a
+            href="https://twitter.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-400 hover:scale-110 transition-transform duration-300 shadow-lg"
+          >
+            <FaTwitter size={24} />
+          </a>
+          <a
+            href="dashb8402@gmail.com"
+            className="w-14 h-14 flex items-center justify-center rounded-full bg-red-500 hover:scale-110 transition-transform duration-300 shadow-lg"
+          >
+            <FaEnvelope size={24} />
+          </a>
+        </div>
       </div>
     </section>
   );
-};
-
-const styles = {
-  section: {
-    width: "100%",
-    minHeight: "100vh",
-    background: "#f9f9f9",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "40px 0",
-  },
-  container: {
-    background: "#fff",
-    borderRadius: "12px",
-    boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-    padding: "32px",
-    maxWidth: "400px",
-    width: "100%",
-    margin: "0 16px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  heading: {
-    fontSize: "2rem",
-    marginBottom: "8px",
-    color: "#222",
-    textAlign: "center",
-  },
-  subheading: {
-    fontSize: "1rem",
-    marginBottom: "24px",
-    color: "#555",
-    textAlign: "center",
-  },
-  form: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    gap: "16px",
-  },
-  input: {
-    padding: "12px",
-    borderRadius: "6px",
-    border: "1px solid #ddd",
-    fontSize: "1rem",
-    outline: "none",
-  },
-  textarea: {
-    padding: "12px",
-    borderRadius: "6px",
-    border: "1px solid #ddd",
-    fontSize: "1rem",
-    resize: "vertical",
-    outline: "none",
-  },
-  button: {
-    padding: "12px",
-    borderRadius: "6px",
-    border: "none",
-    background: "#007bff",
-    color: "#fff",
-    fontSize: "1rem",
-    cursor: "pointer",
-    transition: "background 0.2s",
-  },
-  success: {
-    color: "#28a745",
-    marginTop: "12px",
-    textAlign: "center",
-  },
 };
 
 export default Contact;

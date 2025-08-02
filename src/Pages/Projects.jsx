@@ -17,7 +17,7 @@ const projects = [
   {
     title: 'Portfolio Website',
     description: 'A personal portfolio website built with React showcasing my skills and projects.',
-    link: 'not given',
+    link: 'https://github.com/Watcher037/my_portfolio',
     image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
   },
   
